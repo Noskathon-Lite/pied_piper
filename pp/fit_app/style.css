@@ -1,25 +1,38 @@
+/* Global Styles */
 * {
-  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: steelblue; */
 }
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* Navigation */
 .navigation {
   display: flex;
   flex-direction: row;
 }
 
+/* Container Styles */
 .container {
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin: 100px auto 200px auto;
   background-color: rgb(0, 120, 188);
   padding: 20px;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: 600px 200px;
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr); /* Responsive column widths */
+  grid-template-rows: 500px;
+  gap: 20px; /* Larger gap for better spacing */
   justify-content: center;
-  grid-template-areas: " m s a" "f f f";
+  grid-template-areas: "m s a";
+  border-radius: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Grid Area Assignments */
 main {
   grid-area: m;
 }
@@ -29,23 +42,46 @@ section {
 aside {
   grid-area: a;
 }
-footer {
-  grid-area: f;
-}
 
+/* Shared Styles for Grid Items */
 .s {
-  display: inline-block; /* Ensures proper hover scaling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   margin: 10px;
-  background: rgb(84, 84, 84); /* Dark background */
+  /* background: rgb(84, 84, 84); Dark background */
   color: aliceblue; /* Light text color */
   text-align: center;
   border-radius: 2rem; /* Rounded corners */
   border: 5px solid green; /* Green border with 5px thickness */
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+  font-family: Arial, sans-serif; /* Modern font */
+  font-size: 1.2rem; /* Larger text size for readability */
 }
 
+/* Hover Effect */
 .s:hover {
   transform: scale(1.1); /* Slightly enlarges the element */
   background-color: #d4f7d4; /* Light green background */
+  color: black; /* Black text color for better contrast */
+}
+
+/* Footer Styles */
+.foot {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  font-family: Arial, sans-serif;
+  color: rgb(84, 84, 84);
+  font-size: 1rem;
+  text-align: center;
+}
+:is(#medicine-reminder, #water-intake, #step-tracker) {
+  border: 2px solid #4caf50;
+  padding: 10px;
+  margin: 10px 0;
+  background: white;
+  color: black;
+  border-radius: 2rem;
 }
