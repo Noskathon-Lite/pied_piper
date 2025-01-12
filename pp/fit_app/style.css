@@ -34,9 +34,18 @@ footer {
 }
 
 .s {
+  display: inline-block; /* Ensures proper hover scaling */
   padding: 20px;
-  background: rgb(84, 84, 84);
+  margin: 10px;
+  background: rgb(84, 84, 84); /* Dark background */
+  color: aliceblue; /* Light text color */
   text-align: center;
+  border-radius: 2rem; /* Rounded corners */
+  border: 5px solid green; /* Green border with 5px thickness */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
 
-  color: aliceblue;
+.s:hover {
+  transform: scale(1.1); /* Slightly enlarges the element */
+  background-color: #d4f7d4; /* Light green background */
 }
