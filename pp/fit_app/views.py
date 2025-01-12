@@ -6,7 +6,7 @@ import json
 
 # home page - serve html
 def index (request ):
-  return render (request,'fitt_app/intex.html')
+  return render (request,'fit_app/intex.html')
 
 
 # api step count save garna 
