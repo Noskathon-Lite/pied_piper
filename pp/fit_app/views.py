@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 import json
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
@@ -15,7 +15,7 @@ from datetime import date
 # api step count save garna 
 @csrf_exempt
 def step_view(request):
-  if request.methond == 'POST':
+  if request.method == 'POST':
     data = json.load(request.body) #json lai req 
     user_id =data['user_id']
     steps = data['steps']
@@ -24,6 +24,7 @@ def step_view(request):
     #to save step in database 'aaru action garna ni hunnxa'
     return  JsonResponse({'message':'Step save succesfully'})
   # return JsonResponse ({'erro':'invalid request'},status=404)
+  return render (request, 'index.html')
 
 
 #api for water
