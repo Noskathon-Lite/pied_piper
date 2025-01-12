@@ -1,0 +1,116 @@
+* {
+  background-color: #fff;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: steelblue; */
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+h2 {
+  margin-left: 20px;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+.name {
+  padding: 2px;
+  margin-left: 20px;
+  font-size: large;
+  border: 2px solid#4caf50;
+}
+/* Navigation */
+.navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Container Styles */
+.container {
+  margin: 100px auto 200px auto;
+  background-color: rgb(0, 120, 188);
+  padding: 20px;
+  height: 100vh;
+  display: grid;
+
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: 600px 200px;
+  gap: 10px;
+  justify-content: center;
+  grid-template-areas: " m s a" "f f f";
+}
+.s {
+  grid-template-columns: repeat(3, 1fr); /* Responsive column widths */
+  grid-template-rows: 500px;
+  gap: 20px; /* Larger gap for better spacing */
+  justify-content: center;
+  grid-template-areas: "m s a";
+  border-radius: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Grid Area Assignments */
+main {
+  grid-area: m;
+}
+section {
+  grid-area: s;
+}
+aside {
+  grid-area: a;
+}
+footer {
+  grid-area: f;
+}
+
+.s {
+  padding: 20px;
+  background: rgb(84, 84, 84);
+  text-align: center;
+
+  color: aliceblue;
+}
+.s {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 10px;
+  background: rgb(84, 84, 84); /* Dark background */
+  color: aliceblue; /* Light text color */
+  text-align: center;
+  border-radius: 2rem; /* Rounded corners */
+  border: 5px solid green; /* Green border with 5px thickness */
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Smooth hover effect */
+  font-family: Arial, sans-serif;
+}
+
+.s:hover {
+  transform: scale(1.1); /* Slightly enlarges the element */
+  background-color: #3e95cd; /* Light blue background */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow for a popping effect */
+  color: black; /* Black text color for better contrast */
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+}
+.social_media {
+  padding-bottom: 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
