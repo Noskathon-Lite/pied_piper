@@ -35,11 +35,7 @@ h2 {
   flex-direction: row;
 }
 
-/* 
-.container {
-  margin-top: 100px;
-  margin-bottom: 200px;
-Container Styles */
+/* Container Styles */
 .container {
   margin: 100px auto 200px auto;
   background-color: rgb(0, 120, 188);
@@ -53,7 +49,7 @@ Container Styles */
   justify-content: center;
   grid-template-areas: " m s a" "f f f";
 }
-.s{
+.s {
   grid-template-columns: repeat(3, 1fr); /* Responsive column widths */
   grid-template-rows: 500px;
   gap: 20px; /* Larger gap for better spacing */
@@ -84,10 +80,37 @@ footer {
 
   color: aliceblue;
 }
+.s {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 10px;
+  background: rgb(84, 84, 84); /* Dark background */
+  color: aliceblue; /* Light text color */
+  text-align: center;
+  border-radius: 2rem; /* Rounded corners */
+  border: 5px solid green; /* Green border with 5px thickness */
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Smooth hover effect */
+  font-family: Arial, sans-serif;
+}
 
+.s:hover {
+  transform: scale(1.1); /* Slightly enlarges the element */
+  background-color: #3e95cd; /* Light blue background */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow for a popping effect */
+  color: black; /* Black text color for better contrast */
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+}
 .social_media {
-  margin-top: 30px;
-  /* display: flex;
-  justify-content: center; */
+  padding-bottom: 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
   gap: 10px;
 }
