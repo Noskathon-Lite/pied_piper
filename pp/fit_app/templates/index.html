@@ -1,31 +1,36 @@
-{% load static %}
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>LifeSync Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
   </head>
   <body>
     <header>
-      <h1>LifeSync</h1>
-      <h2>
-        <p class="circle"></p>
-        <span class="name">UserID</span>
-      </h2>
+      <div class="header-container">
+        <h1 class="header-title">LifeSync</h1>
+        <div class="date-time">
+          <span id="current-date-time"></span>
+        </div>
+      </div>
     </header>
-    <section class="container">
-      <main class="s">
-        <section id="medicine-reminder">
+    <main>
+      <div class="dashboard-title">DASHBOARD</div>
+      <div class="dashboard-container">
+        <section class="card medicine-reminder">
           <h2>Medicine Reminder</h2>
-          <label for="medicine-time">Set Reminder (HH:MM):</label>
+          <label for="medicine-time">Set Reminder:</label>
           <input type="time" id="medicine-time" />
           <button id="set-reminder">Set Reminder</button>
+          <img
+            id="medicine"
+            src="https://img.favpng.com/19/2/13/medicine-icon-drug-icon-healthcare-and-medical-icon-png-favpng-nNgv3wggdbNDKZxQZ0HtrUJnn.jpg"
+            alt="Medicine Icon"
+          />
         </section>
-      </main>
-      <section class="s">
-        <section id="water-intake">
+        <section class="card water-intake">
           <h2>Water Intake</h2>
           <label for="water-goal">Daily Goal (Liters):</label>
           <input
@@ -35,53 +40,32 @@
             min="0"
             step="0.1"
           />
-          <button id="log-water" style="padding: 5px">Log 250ml</button>
+          <button id="log-water">OK</button>
           <p>Total Consumed: <span id="water-total">0</span> L</p>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4240/4240980.png"
+            alt="Water Intake Icon"
+          />
+          <canvas id="watergauge"></canvas>
         </section>
-      </section>
-      <aside class="s">
-        <section id="step-tracker">
+        <section class="card step-tracker">
           <h2>Step Tracker</h2>
           <p>Steps Taken: <span id="step-count">0</span></p>
-          <button id="reset-steps">Reset Steps</button>
-        </section>
-      </aside>
-    </section>
-    <footer class="foot">
-      <p>Project by <strong>Pied Piper</strong>, 1st Semester Students</p>
-      <p>© 2025 All Rights Reserved</p>
-      <section class="social_media">
-        <lord-icon
-          src="https://cdn.lordicon.com/wgtaryar.json"
-          trigger="hover"
-          style="width: 50px; height: 50px"
-        >
-        </lord-icon>
 
-        <lord-icon
-          src="https://cdn.lordicon.com/wlbymhoo.json"
-          trigger="hover"
-          colors="primary:#e86830,secondary:#08a88a"
-          style="width: 50px; height: 50px"
-        >
-        </lord-icon>
-        <lord-icon
-          src="https://cdn.lordicon.com/euybrknk.json"
-          trigger="hover"
-          colors="primary:#e86830,secondary:#08a88a"
-          style="width: 50px; height: 50px"
-        >
-        </lord-icon>
-        <lord-icon
-          src="https://cdn.lordicon.com/ubpgwkmy.json"
-          trigger="hover"
-          colors="primary:#e86830,secondary:#08a88a"
-          style="width: 50px; height: 50px"
-        >
-        </lord-icon>
-      </section>
+          <button id="reset-steps">Reset Steps</button>
+          <img
+            src="https://w7.pngwing.com/pngs/873/215/png-transparent-computer-icons-footprint-steps-miscellaneous-hand-foot-thumbnail.png"
+            alt="Steps Icon"
+          />
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Project by <strong>Pied Piper</strong>, 1st Semester Students <br />
+        © 2025 All Rights Reserved
+      </p>
     </footer>
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="{% static 'main.js' %}"></script>
   </body>
 </html>
