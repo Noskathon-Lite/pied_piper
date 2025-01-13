@@ -4,15 +4,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LifeSync Dashboard</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>LifeSync - Your Wellness Companion</title>
+    <link rel="stylesheet"href="{% static 'style.css' %}"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div class="header-container">
-        <h1 class="header-title">LifeSync</h1>
-        <div class="date-time">
-          <span id="current-date-time"></span>
+        <h1 id="header-title">LifeSync</h1>
+        <div class="user-info">
+          <span id="user-id"
+            >User ID: <span id="user-id-display">12345</span></span
+          >
+          <div class="date-time">
+            <span id="current-date-time"></span>
+          </div>
         </div>
       </div>
     </header>
@@ -20,50 +35,48 @@
       <div class="dashboard-title">DASHBOARD</div>
       <div class="dashboard-container">
         <section class="card medicine-reminder">
-          <h2>Medicine Reminder</h2>
-          <label for="medicine-time">Set Reminder:</label>
+          <h2><i class="fas fa-pills"></i> Medicine Reminder</h2>
+          <label for="medicine-time">Time:</label>
           <input type="time" id="medicine-time" />
           <button id="set-reminder">Set Reminder</button>
-          <img
-            id="medicine"
-            src="https://img.favpng.com/19/2/13/medicine-icon-drug-icon-healthcare-and-medical-icon-png-favpng-nNgv3wggdbNDKZxQZ0HtrUJnn.jpg"
-            alt="Medicine Icon"
-          />
+          <div id="medicine-reminders-list"></div>
         </section>
         <section class="card water-intake">
-          <h2>Water Intake</h2>
-          <label for="water-goal">Daily Goal (Liters):</label>
-          <input
-            type="number"
-            id="water-goal"
-            placeholder="e.g., 3"
-            min="0"
-            step="0.1"
-          />
-          <button id="log-water">OK</button>
-          <p>Total Consumed: <span id="water-total">0</span> L</p>
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/4240/4240980.png"
-            alt="Water Intake Icon"
-          />
-          <canvas id="watergauge"></canvas>
+          <h2><i class="fas fa-glass-water"></i> Water Intake</h2>
+          <div class="water-input-group">
+            <label for="water-goal">Daily Goal (L):</label>
+            <input
+              type="number"
+              id="water-goal"
+              placeholder="e.g., 3"
+              min="0"
+              step="0.1"
+            />
+            <button id="set-water-goal">Set</button>
+          </div>
+          <div class="water-progress-container">
+            <div class="water-progress-bar">
+              <div class="water-fill"></div>
+            </div>
+            <span id="water-total"
+              >0.0 L / <span id="water-goal-display">0.0</span> L</span
+            >
+          </div>
+          <button id="log-water">Add 0.5L</button>
         </section>
         <section class="card step-tracker">
-          <h2>Step Tracker</h2>
-          <p>Steps Taken: <span id="step-count">0</span></p>
-
+          <h2><i class="fas fa-shoe-prints"></i> Step Tracker</h2>
+          <div class="step-count-display">
+            <span id="step-count">0</span> Steps
+          </div>
+          <div class="step-progress"></div>
           <button id="reset-steps">Reset Steps</button>
-          <img
-            src="https://w7.pngwing.com/pngs/873/215/png-transparent-computer-icons-footprint-steps-miscellaneous-hand-foot-thumbnail.png"
-            alt="Steps Icon"
-          />
         </section>
       </div>
     </main>
     <footer>
       <p>
-        Project by <strong>Pied Piper</strong>, 1st Semester Students <br />
-        © 2025 All Rights Reserved
+        Project by Pied Piper, 1st Semester Students © 2025 All Rights Reserved
       </p>
     </footer>
     <script src="{% static 'main.js' %}"></script>
