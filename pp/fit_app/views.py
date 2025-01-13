@@ -58,3 +58,7 @@ def get_today_reminders(request , user_id):
   reminders = Reminder.objects.filter(user_id = user_id,date = date.today())
   reminder_list =[{"text":reminder.reminder_text,"time":reminder.remender_time } for reminder in reminders]
   return JsonResponse(reminder_list ,safe = False)
+
+
+def index(request):
+  return render(request,'index.html')
